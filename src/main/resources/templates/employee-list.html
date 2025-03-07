@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Employee List</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<h2>Employee List</h2>
+
+	<a href="/employees/add">Add New Employee</a>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Position</th>
+				<th scope="col">Salary</th>
+				<th scope="col">Department</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="employee : ${employees}">
+				<td th:text="${employee.id}"></td>
+				<td th:text="${employee.name}"></td>
+				<td th:text="${employee.position}"></td>
+				<td th:text="${employee.salary}"></td>
+				<td th:text="${employee.department}"></td>
+				<td><a th:href="@{/employees/edit/{id}(id=${employee.id})}"
+					class="btn btn-warning btn-smal"
+					th:attr="data-id=${employee.id}, data-name=${employee.name}, data-position=${employee.position}, 
+					data-salary=${employee.salary}, data-department=${employee.department}">Edit
+				</a> <a th:href="@{/employees/delete/{id}(id=${employee.id})}"
+					class="btn btn-danger btn-sm" th:attr="data-id=${employee.id}">Delete
+
+				</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+
+	Modal
+		<div class="modal fade modal-dialog modal-dialog-centered"
+		id="editEmployeeModal" data-bs-backdrop="static"
+		data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="editEmployeeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="editEmployeeModalLabel">Edit
+						Employee</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form id="editEmployeeForm">
+						<input type="hidden" id="editEmployeeId">
+						<div class="mb-3">
+							<label for="editEmployeeName" class="form-label">Name</label> <input
+								type="text" class="form-control" id="editEmployeeName" required>
+						</div>
+						<div class="mb-3">
+							<label for="editEmployeePosition" class="form-label">Position</label>
+							<input type="text" class="form-control" id="editEmployeePosition"
+								required>
+						</div>
+						<div class="mb-3">
+							<label for="editEmployeeSalary" class="form-label">Salary</label>
+							<input type="text" class="form-control" id="editEmployeeSalary"
+								required>
+						</div>
+						<div class="mb-3">
+							<label for="editEmployeeDepartment" class="form-label">Department</label>
+							<input type="text" class="form-control"
+								id="editEmployeeDepartment" required>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-success" id="updateEmployee">Save Changes</button>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+					<button type="submit" class="btn btn-success" id="updateEmployee">Save
+						Changes</button>
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<script src="/js/employee.js"></script>
+
+</body>
+
+</html> -->
